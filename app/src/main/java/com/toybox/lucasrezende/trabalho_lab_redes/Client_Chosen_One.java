@@ -13,7 +13,7 @@ import ArquivoBase.AES;
 
 public class Client_Chosen_One {
 
-    public static void main(String argv[]) throws Exception {
+    public static void conexao() throws  Exception{
         String sentence;
         String newString[] = new String[1];
         String secretKey = "secretKey";
