@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Trabalho_Lab_Redes</string>
+    <string name="conect">Conect</string>
+    <string name="trabalho_de_redes">Trabalho de Redes</string>
 </resources>
