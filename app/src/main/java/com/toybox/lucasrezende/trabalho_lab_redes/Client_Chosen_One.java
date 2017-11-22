@@ -1,9 +1,12 @@
 package com.toybox.lucasrezende.trabalho_lab_redes;
 
+import android.widget.ListView;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.util.List;
 
 import ArquivoBase.AES;
 
@@ -13,28 +16,24 @@ import ArquivoBase.AES;
 
 public class Client_Chosen_One {
 
-    public static void conexao() throws  Exception{
+    private List<String> clientes;
+
+    public Client_Chosen_One() {}
+
+    public void conexao() throws  Exception{
         String sentence;
         String newString[] = new String[1];
         String secretKey = "secretKey";
         String hash;
         String modifiedSentence;
+        String tokenconversa;
+
 
         //preparaçao
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
         Socket clientSocket = new Socket("localhost", 6789);
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
         BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-
-        //definiçao do protocolo
-
-        //Mensagem pedindo lista de usuarios ativos
-
-        //escolhe alguem da lista e envia chave
-
-        //recebe dados sobre o usuario
-
-        //estabelece conexao com usuario
 
         //mensagem
         sentence = inFromUser.readLine();

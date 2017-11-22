@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView usuarios;
     private Button conecta;
     private Button confirmna;
+    Client_Chosen_One client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,12 @@ public class MainActivity extends AppCompatActivity {
         conecta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                client = new Client_Chosen_One();
+                try {
+                    client.conexao();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 

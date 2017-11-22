@@ -23,6 +23,17 @@ public class Server {
 
         ServerSocket welcomeSocket = new ServerSocket(6789);
 
+
+        //definiçao do protocolo//
+        //tarefas
+
+        //1-  cliente envia requisiçao e servidor retorna lista com usuarios ativos , vc e marcado na lista de pessoa online
+
+        //2-  cliente envia nome do usuario com quem deseja falar e servidor marca na tabela a conversa entre os dois ip
+        //    e cria token e envia para ambos da conversar
+
+        //3-  cliente envia pedido de fechamento de conversa
+
         while (true) {
             Socket connectionSocket = welcomeSocket.accept();
             BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
