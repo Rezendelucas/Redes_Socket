@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import Models.AMensagem;
 
 public class Chat_Window extends AppCompatActivity {
 
@@ -13,6 +16,8 @@ public class Chat_Window extends AppCompatActivity {
     private Button close;
     private Button gravarAudio;
     private boolean flag = true;
+    private ArrayAdapter<String> mensagenAdapter;
+    private Comunicaçao_Server conexao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +27,6 @@ public class Chat_Window extends AppCompatActivity {
         mensagens = (ListView) findViewById(R.id.lstMensagens);
         close = (Button) findViewById(R.id.btnFechaConversa);
         gravarAudio = (Button) findViewById(R.id.btnGravarEnviar);
-
 
         while(flag){
         close.setOnClickListener(new View.OnClickListener() {
@@ -43,8 +47,8 @@ public class Chat_Window extends AppCompatActivity {
                 //envia pro servidor
             }
         });
-
-            mensagens.setAdapter();//push no servidor procura msg nova);
+            mensagenAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,conexao.getInstance().getNovaMensagen());
+            mensagens.setAdapter(mensagenAdapter);//push no servidor procura msg nova);
         }
         Intent intent = new Intent(Chat_Window.this, MainActivity.class);
         startActivity(intent);
