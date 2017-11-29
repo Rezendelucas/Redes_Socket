@@ -13,8 +13,9 @@ import Models.AMensagem;
 public class Comunicaçao_Server {
 
     private static Comunicaçao_Server instance = null;
-    private AMensagem msg;
+    private ArrayList<AMensagem> msg;
     private ArrayList<String> listUsuarios;
+    private Client_Chosen_One  conect;
 
     public Comunicaçao_Server(){
     }
@@ -26,8 +27,15 @@ public class Comunicaçao_Server {
         return instance;
     }
 
-    public AMensagem getNovaMensagen() {
+    public ArrayList<AMensagem> getNovaMensagen() {
+        msg.add(PushNovaMensagem());
         return msg;
+    }
+
+    private AMensagem PushNovaMensagem() {
+        //pesca no server a ultima mensagem disponivel
+        conect = new Client_Chosen_One();// passa os parametros pra conexao
+        return null; //return a msg
     }
 
     public ArrayList<String> getListUsuarios() {
@@ -37,6 +45,7 @@ public class Comunicaçao_Server {
 
     private ArrayList<String> PushUsuarios() {
         //pesca no server a list de usuarios ativos
+        conect = new Client_Chosen_One();// passa os parametros pra conexao
         return null; //return a lista
     }
 }
