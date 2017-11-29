@@ -18,7 +18,9 @@ public class Client_Chosen_One {
 
     private List<String> clientes;
 
-    public Client_Chosen_One() {}
+    public Client_Chosen_One(){
+
+    }
 
     public void conexao() throws  Exception{
         String sentence;
@@ -26,7 +28,6 @@ public class Client_Chosen_One {
         String secretKey = "secretKey";
         String hash;
         String modifiedSentence;
-        String tokenconversa;
 
 
         //preparaçao
@@ -49,8 +50,6 @@ public class Client_Chosen_One {
         }else{
             System.out.println("Mensagem adulterada!");
         }
-
         clientSocket.close();
-
     }
 }

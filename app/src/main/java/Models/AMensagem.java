@@ -23,4 +23,8 @@ public abstract class AMensagem implements Serializable {
         return (conexao.isConectado() && !tokenConversa.isEmpty());
     }
 
+    @Override
+    public String toString() {
+        return "Conversa: " + tokenConversa + " enviada: " + horaMensagem;
+    }
 }
