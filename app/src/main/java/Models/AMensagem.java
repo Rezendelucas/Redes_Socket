@@ -24,4 +24,7 @@ public abstract class AMensagem implements Serializable {
     }
 
 
+    public int getListUsuarios() {
+        return listUsuarios;  //eu quero a lista de usuarios pra setar no adpter
+    }
 }

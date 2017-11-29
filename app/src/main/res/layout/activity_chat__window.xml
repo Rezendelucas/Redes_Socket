@@ -6,4 +6,27 @@
     android:layout_height="match_parent"
     tools:context="com.toybox.lucasrezende.trabalho_lab_redes.Chat_Window">
 
+    <Button
+        android:id="@+id/btnGravarEnviar"
+        android:layout_width="159dp"
+        android:layout_height="48dp"
+        android:text="Gravar"
+        tools:layout_editor_absoluteX="209dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <Button
+        android:id="@+id/btnFechaConversa"
+        android:layout_width="159dp"
+        android:layout_height="48dp"
+        android:text="Close"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <ListView
+        android:id="@+id/lstMensagens"
+        android:layout_width="342dp"
+        android:layout_height="415dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="23dp" />
 </android.support.constraint.ConstraintLayout>
