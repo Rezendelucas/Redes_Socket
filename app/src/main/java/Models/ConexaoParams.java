@@ -1,5 +1,8 @@
 package Models;
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
 import java.io.Serializable;
 
 /**
@@ -27,6 +30,7 @@ public class ConexaoParams implements Serializable {
         return this.ip;
     }
 
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     public boolean isConectado(){
         return (!this.ip.isEmpty() && !this.token.isEmpty());
     }

@@ -1,5 +1,8 @@
 package Models;
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
 import java.io.Serializable;
 import java.security.Timestamp;
 
@@ -19,12 +22,13 @@ public abstract class AMensagem implements Serializable {
 
     public abstract String getTipoMensagem();
 
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     public boolean isValid(){
         return (conexao.isConectado() && !tokenConversa.isEmpty());
     }
 
 
-    public int getListUsuarios() {
-        return listUsuarios;  //eu quero a lista de usuarios pra setar no adpter
-    }
+    //public int getListUsuarios() {
+      //  return listUsuarios;  //eu quero a lista de usuarios pra setar no adpter
+    //}
 }
