@@ -23,8 +23,4 @@ public abstract class AMensagem implements Serializable {
         return (conexao.isConectado() && !tokenConversa.isEmpty());
     }
 
-
-    public int getListUsuarios() {
-        return listUsuarios;  //eu quero a lista de usuarios pra setar no adpter
-    }
 }
