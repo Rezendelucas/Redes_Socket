@@ -15,8 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView usuarios;
     private Button conecta;
     private Button confirmna;
-    Client_Chosen_One client;
-    private AMensagem mensagem;
+    private Client_Chosen_One client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,21 +24,24 @@ public class MainActivity extends AppCompatActivity {
 
         usuarios = (ListView)findViewById(R.id.lstClienteAtivos);
         conecta = (Button)findViewById(R.id.btnChamaServer);
+        client = new Client_Chosen_One();
 
-        ArrayAdapter<String> usuariosAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,mensagem.getListUsuarios());
+        ArrayAdapter<String> usuariosAdapter = null;
+        try {
+            usuariosAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,client.getListUsuarios());
+
         usuarios.setAdapter(usuariosAdapter);
 
         conecta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                client = new Client_Chosen_One();
-                try {
-                    client.conexao();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                     usuarios.getSelectedItem();
+                    //client.requisiçaoDeChat();
             }
         });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         usuarios.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

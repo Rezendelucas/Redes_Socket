@@ -47,7 +47,7 @@ public class Chat_Window extends AppCompatActivity {
                 //envia pro servidor
             }
         });
-            mensagenAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,conexao.getInstance().getNovaMensagen());
+          //  mensagenAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,conexao.getInstance().getNovaMensagen());
             mensagens.setAdapter(mensagenAdapter);//push no servidor procura msg nova);
         }
         Intent intent = new Intent(Chat_Window.this, MainActivity.class);
